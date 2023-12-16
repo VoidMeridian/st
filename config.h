@@ -5,12 +5,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Med:style=Medium:pixelsize=14:antialias=true:autohint=true";
+static char *font = "CaskaydiaCove NFM:style=Regular:pixelsize=16:antialias=true:autohint=true";
 /* Spare fonts */
 static char *
 	font2[] = {
-		"FiraCode Nerd Med:style=Medium:pixelsize=14:antialias=true:autohint=true"};
-static int borderpx = 4;
+		"FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true"};
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
