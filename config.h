@@ -10,7 +10,7 @@ static char *font = "CaskaydiaCove NFM:style=Regular:pixelsize=16:antialias=true
 static char *
 	font2[] = {
 		"FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true"};
-static int borderpx = 2;
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
