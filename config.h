@@ -5,7 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove NFM Bold:pixelsize=16:antialias=true:autohint=true";
+static char *font = "FiraCode Nerd Font Mono:style=Medium:pixelsize=14:antialias=true:autohint=true";
+/* Spare fonts */
+static char *
+	font2[] = {
+		"Liberation Mono:pixelsize=12:antialias=true:autohint=true"};
 static int borderpx = 2;
 
 /*
