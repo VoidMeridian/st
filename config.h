@@ -5,12 +5,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font Mono:style=Medium:pixelsize=14:antialias=true:autohint=true";
+static char *font = "FiraCode Nerd Med:style=Medium:pixelsize=14:antialias=true:autohint=true";
 /* Spare fonts */
 static char *
 	font2[] = {
-		"Liberation Mono:pixelsize=12:antialias=true:autohint=true"};
-static int borderpx = 2;
+		"FiraCode Nerd Med:style=Medium:pixelsize=14:antialias=true:autohint=true"};
+static int borderpx = 4;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -142,11 +142,24 @@ static unsigned int defaultrcs = 258;
 static unsigned int cursorshape = 4;
 
 /*
+ * Whether to use pixel geometry or cell geometry
+ */
+
+static Geometry geometry = PixelGeometry;
+
+/*
  * Default columns and rows numbers
  */
 
 static unsigned int cols = 80;
 static unsigned int rows = 24;
+
+/*
+ * Default width and height (including borders!)
+ */
+
+static unsigned int width = 1272;
+static unsigned int height = 656;
 
 /*
  * Default colour and shape of the mouse cursor
