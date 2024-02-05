@@ -1,0 +1,7 @@
+/.vscode
+*.diff
+*.orig
+st
+*.o
+*.rej
+/.idea

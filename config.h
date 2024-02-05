@@ -5,12 +5,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove NFM Bold:pixelsize=14:antialias=true:autohint=true";
+static char *font = "CaskaydiaCove NFM:style=Regular:pixelsize=16:antialias=true:autohint=true";
 /* Spare fonts */
 static char *
 	font2[] = {
-		"CaskaydiaCove NFM Bold:pixelsize=14:antialias=true:autohint=true"};
-static int borderpx = 2;
+		"FiraCode Nerd Font:pixelsize=16:antialias=true:autohint=true"};
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -98,30 +98,31 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
+/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#494D64",
-	"#ED8796",
-	"#A6DA95",
-	"#EED49F",
-	"#8AADF4",
-	"#F5BDE6",
-	"#8BD5CA",
-	"#B8C0E0",
+	"#45475A",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#BAC2DE",
 
 	/* 8 bright colors */
-	"#5B6078",
-	"#ED8796",
-	"#A6DA95",
-	"#EED49F",
-	"#8AADF4",
-	"#F5BDE6",
-	"#8BD5CA",
-	"#A5ADCB",
+	"#585B70",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#A6ADC8",
 
-	[256] = "#CAD3F5", /* default foreground colour */
-	[257] = "#24273A", /* default background colour */
-	[258] = "#F4DBD6", /*575268*/
+	[256] = "#CDD6F4", /* default foreground colour */
+	[257] = "#1E1E2E", /* default background colour */
+	[258] = "#F5E0DC", /*575268*/
 
 };
 
@@ -145,7 +146,7 @@ static unsigned int cursorshape = 4;
  * Whether to use pixel geometry or cell geometry
  */
 
-static Geometry geometry = CellGeometry;
+static Geometry geometry = PixelGeometry;
 
 /*
  * Default columns and rows numbers
@@ -158,8 +159,8 @@ static unsigned int rows = 24;
  * Default width and height (including borders!)
  */
 
-static unsigned int width = 564;
-static unsigned int height = 364;
+static unsigned int width = 1272;
+static unsigned int height = 656;
 
 /*
  * Default colour and shape of the mouse cursor
@@ -189,9 +190,11 @@ static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
 	{XK_ANY_MOD, Button2, selpaste, {.i = 0}, 1},
 	{ShiftMask, Button4, ttysend, {.s = "\033[5;2~"}},
-	{XK_ANY_MOD, Button4, ttysend, {.s = "\031"}},
+	// {XK_ANY_MOD, Button4, ttysend, {.s = "\031"}},
+	{XK_ANY_MOD, Button4, kscrollup, {.i = -1}},
 	{ShiftMask, Button5, ttysend, {.s = "\033[6;2~"}},
-	{XK_ANY_MOD, Button5, ttysend, {.s = "\005"}},
+	// {XK_ANY_MOD, Button5, ttysend, {.s = "\005"}},
+	{XK_ANY_MOD, Button5, kscrolldown, {.i = -1}},
 };
 
 /* Internal keyboard shortcuts. */
