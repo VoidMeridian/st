@@ -674,7 +674,7 @@ void die(const char *errstr, ...)
 	va_start(ap, errstr);
 	vfprintf(stderr, errstr, ap);
 	va_end(ap);
-	exit(1);
+	exit(0);
 }
 
 void execsh(char *cmd, char **args)
@@ -726,14 +726,14 @@ void execsh(char *cmd, char **args)
 	setenv("TERM", termname, 1);
 
 	signal(SIGCHLD, SIG_DFL);
-	signal(SIGHUP, SIG_DFL);
+	signal(SIGHUP, SIG_IGN);
 	signal(SIGINT, SIG_DFL);
 	signal(SIGQUIT, SIG_DFL);
 	signal(SIGTERM, SIG_DFL);
 	signal(SIGALRM, SIG_DFL);
 
 	execvp(prog, args);
-	_exit(1);
+	_exit(0);
 }
 
 void sigchld(int a)
